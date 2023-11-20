@@ -1,0 +1,37 @@
+<div class="dashboard_header">
+
+  <p>
+    
+        <mat-toolbar>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <button mat-icon-button class="example-icon keep-icon" aria-label="Example icon-button with keep icon">
+            <img src="../../assets/images/googlekeepLogo.png" alt="google keep">
+          </button>
+          <span>Keep</span>
+          <mat-form-field class="search-bar" appearance="fill">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Search">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+          <button mat-icon-button class="example-icon refresh-icon" aria-label="Example icon-button with refresh icon">
+            <mat-icon>refresh</mat-icon>
+          </button>
+          <button mat-icon-button class="example-icon list view" aria-label="Example icon-list view">
+            <img src="../../assets/images/listView.svg" alt="google keep">
+          
+          </button>
+          <button mat-icon-button class="example-icon settings-icon" aria-label="Example icon-button with settings icon">
+            <mat-icon>settings</mat-icon>
+          </button>
+        </mat-toolbar>
+        <mat-sidenav-container>
+          <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
+            Sidenav content
+          </mat-sidenav>
+    
+      
+      
+    
+  
