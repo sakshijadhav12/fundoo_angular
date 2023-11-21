@@ -1,37 +1,97 @@
 <div class="dashboard_header">
 
   <p>
+
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+        (click)="toggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon keep-icon" aria-label="Example icon-button with keep icon">
+        <img src="../../assets/images/googlekeepLogo.png" alt="google keep">
+      </button>
+      <span>Keep</span>
+      <mat-form-field class="search-bar" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <button mat-icon-button class="example-icon refresh-icon" aria-label="Example icon-button with refresh icon">
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon list view" aria-label="Example icon-list view">
+        <img src="../../assets/images/listView.svg" alt="google keep">
+      </button>
+      <button mat-icon-button class="example-icon settings-icon" aria-label="Example icon-button with settings icon">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon more" aria-label="Example icon-more">
+        <img src="../../assets/images/moreIcon.svg" alt="google keep">
+      </button>
+
+    </mat-toolbar>
+
+
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" [opened]="open">
+      <mat-nav-list>
+        <div>
+          <button mat-icon-button class="example-icon note icon" aria-label="Example icon-note icon">
+            <img src="../../assets/images/noteIcon.svg" alt="not icon">
+          </button>
+          <span>Notes</span>
+        </div>
+        <div>
+          <button mat-icon-button class="example-icon remainder " aria-label="Example remainder">
+            <img src="../../assets/images/remainder.svg" alt="not icon">
+          </button>
+          <span>remainder</span>
+        </div>
+        <div>
+          <button mat-icon-button class="example-icon edit lable " aria-label="Example editlabel">
+            <img src="../../assets/images/editLabels.svg" alt="not icon">
+          </button>
+          <span>Edit</span>
+        </div>
+        <div>
+          <button mat-icon-button class="example-icon archive " aria-label="Example archive">
+            <img src="../../assets/images/archive.svg" alt="not icon">
+          </button>
+          <span>Archive</span>
+        </div>
+        <div>
+          <button mat-icon-button class="example-icon trash " aria-label="Example trash">
+            <img src="../../assets/images/trash.svg" alt="not icon">
+          </button>
+          <span>Bin</span>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <!-- <mat-sidenav-container
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+  >
+</mat-sidenav-container> -->
+  </p>
+</div>
+<div class="card">
+  <mat-card>
+    <div class="content">
+      <mat-card-content class="flex-container">
+        <div class="note">Take a note</div>
+        <div>
+        <img src="../../assets/images/newlisticon.svg" alt="new list">
+        <img src="../../assets/images/brush.svg" alt="brush">
+        <img src="../../assets/images/notewithiamge.svg" alt="new image with image">
+      </div>
+      </mat-card-content>
+    </div>
     
-        <mat-toolbar>
-          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-          <button mat-icon-button class="example-icon keep-icon" aria-label="Example icon-button with keep icon">
-            <img src="../../assets/images/googlekeepLogo.png" alt="google keep">
-          </button>
-          <span>Keep</span>
-          <mat-form-field class="search-bar" appearance="fill">
-            <mat-label>Search</mat-label>
-            <input matInput placeholder="Search">
-            <mat-icon matSuffix>search</mat-icon>
-          </mat-form-field>
-          <button mat-icon-button class="example-icon refresh-icon" aria-label="Example icon-button with refresh icon">
-            <mat-icon>refresh</mat-icon>
-          </button>
-          <button mat-icon-button class="example-icon list view" aria-label="Example icon-list view">
-            <img src="../../assets/images/listView.svg" alt="google keep">
-          
-          </button>
-          <button mat-icon-button class="example-icon settings-icon" aria-label="Example icon-button with settings icon">
-            <mat-icon>settings</mat-icon>
-          </button>
-        </mat-toolbar>
-        <mat-sidenav-container>
-          <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')" (closed)="events.push('close!')">
-            Sidenav content
-          </mat-sidenav>
-    
-      
-      
-    
-  
+       <!-- <div class="cardimg"> 
+        <img src="../../assets/images/newlisticon.svg" alt="new list">
+        <img src="../../assets/images/brush.svg " alt=" brush">
+        <img src="../../assets/images/notewithiamge.svg" alt="new image with image">
+      </div>  -->
+  </mat-card>
+
+</div>
