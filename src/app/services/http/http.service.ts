@@ -9,23 +9,25 @@ import { catchError } from 'rxjs/operators';
 })
 export class HttpService {
   private baseUrl = 'https://localhost:44366/api';
+  
   private headers = new HttpHeaders({
     Accept: 'application/json',
-    Authorization: localStorage.getItem('token') || '',
+    Authorization: `Bearer ${ localStorage.getItem('token')}`
+    
   });
+//   private header = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`)
 
   constructor(private http: HttpClient) {}
-
-  postService(url: string, reqData: any) {
-    console.log(this.headers);
-    return this.http.post(this.baseUrl + url, reqData, {
+  postService(url: string, reqData: any ) {
+   // console.log(url,reqData,localStorage.getItem('token'));
+    return this.http.post(this.baseUrl + url, reqData,  {
       headers: this.headers,
     });
   }
 
-  getService(url: string) {
+  getService(url: string , headersOption: any) {
     return this.http.get(this.baseUrl + url, {
-      headers: this.headers,
+      headers: headersOption,
     });
   }
 }

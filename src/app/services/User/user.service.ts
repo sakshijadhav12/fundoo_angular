@@ -17,4 +17,5 @@ export class UserService {
     const res = this.httpService.postService('/User/login', data);
     return res;
   }
+  
 }

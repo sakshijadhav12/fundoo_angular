@@ -22,6 +22,12 @@ import { MatListModule } from '@angular/material/list';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NoteIconsComponent } from './note-icons/note-icons.component';
+import { AddNoteComponent } from './Component/add-note/add-note.component';
+import { FormsModule } from '@angular/forms';
+import { DisplayNotesComponent } from './display-notes/display-notes.component';
+import { GetAllNotesComponent } from './get-all-notes/get-all-notes.component';
 
 
 @NgModule({
@@ -29,7 +35,12 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     ResistrationComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent,
+    NoteIconsComponent,
+    AddNoteComponent,
+    DisplayNotesComponent,
+    GetAllNotesComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +57,8 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

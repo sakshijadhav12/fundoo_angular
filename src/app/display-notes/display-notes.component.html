@@ -1,0 +1,16 @@
+<div class="note-main">
+    <div *ngFor="let notes of notes" class="note-outer-cnt">
+      <div class="note-inner-cnt" style="width: initial">
+        <div>{{ notes?.title }}</div>
+      </div>
+      <div class="note-details-cnt">
+        <div>{{ notes?.description }}</div>
+      </div>
+      <div class="add-note-footer-cnt">
+        <div>
+          <app-note-icons></app-note-icons>
+          
+        </div>
+      </div>
+    </div>
+  </div>

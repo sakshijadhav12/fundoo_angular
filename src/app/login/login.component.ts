@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { UserService } from '../services/User/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,10 +10,14 @@ import { UserService } from '../services/User/user.service';
 export class LoginComponent {
    loginform!: FormGroup;
 submitted =false
-  constructor(private formBuilder: FormBuilder , private userService: UserService)  {
+  constructor(private formBuilder: FormBuilder , private userService: UserService,private router: Router, private route: ActivatedRoute)  {
     this.loginform = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
+    });
+
+    this.router.events.subscribe((event) => {
+      console.log('Router Event:', event);
     });
     
   }
@@ -33,9 +38,9 @@ submitted =false
         })
         .subscribe((response: any) => {
           console.log('id', response);
-          if (response.id) {
-            localStorage.setItem('token', response.id);
-            //this.router.navigate(['dashboard']);
+          if (response.data) {
+            localStorage.setItem('token', response.data);
+          this.router.navigate(['dashboard']);
           }
         });
     }

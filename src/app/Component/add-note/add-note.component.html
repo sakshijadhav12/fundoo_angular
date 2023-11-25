@@ -1,0 +1,26 @@
+<div class="main-div" [class.open]="isSecondCardOpen" [class.closed]="!isSecondCardOpen">
+    <mat-card *ngIf="!isSecondCardOpen" (click)="openSecondCard()">
+        <mat-card-content class="flex-container">
+            <div class="note">Take a note...</div>
+            <div>
+                <img src="../../assets/images/newlisticon.svg" alt="new list">
+                <img src="../../assets/images/brush.svg" alt="brush">
+                <img src="../../assets/images/notewithiamge.svg" alt="new image with image">
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="mat-card-2" *ngIf="isSecondCardOpen">
+        <div class="mat-card-2-title">
+            <input [(ngModel)]="title" placeholder="Title" />
+            <i class="fa-solid fa-thumbtack fa-xl" style="color: #5f5d5d; font-size: medium"></i>
+        </div>
+
+        <textarea [(ngModel)]="description" class="mat-card-2-description" placeholder="Take a note.."></textarea>
+
+        <app-note-icons></app-note-icons>
+        <button id="close" (click)="closeSecondCard()">
+            close
+          </button>
+    </mat-card>
+</div>

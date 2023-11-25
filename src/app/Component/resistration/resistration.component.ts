@@ -13,6 +13,7 @@ export class ResistrationComponent {
   registerForm: FormGroup;
   showPassword = false;
   submitted = false;
+  router: any;
 
   constructor(private formBuilder: FormBuilder ,private userService: UserService) {
     this.registerForm = this.formBuilder.group({
@@ -56,8 +57,9 @@ lastname: ['', Validators.required],
           service: 'advance',
         })
         .subscribe((response: any) => {
-          console.log('id', response);
-          localStorage.setItem('token', response.id);
+          console.log('data', response);
+          localStorage.setItem('token', response.data);
+          this.router.navigate(['']);
         
         });
     }
