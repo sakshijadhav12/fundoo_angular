@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { NoteIconsComponent } from './note-icons/note-icons.component';
 import { AddNoteComponent } from './Component/add-note/add-note.component';
 import { DisplayNotesComponent } from './display-notes/display-notes.component';
+import { ArchiveComponent } from './archive/archive.component';
+import { TrashComponent } from './Component/trash/trash.component';
 
 const routes: Routes = [
   {
@@ -19,6 +21,11 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component:HeaderComponent,
+    children: [
+      { path: 'display_note', component: DisplayNotesComponent },
+      { path: 'trashnote', component:TrashComponent  },
+      { path: 'archive', component: ArchiveComponent},
+    ], 
   },
   {
     path: 'noteicon',
@@ -32,10 +39,22 @@ const routes: Routes = [
   //   path:'displaynote',
   //   component: DisplayNotesComponent
   // },
-  {
-    path:'display_note',
-    component: DisplayNotesComponent
-  },
+  // {
+  //   path:'display_note',
+  //   component: DisplayNotesComponent
+  // },
+  // {
+  //   path: 'review',
+  //   component:  ReviewComponent,
+  // },
+  // {
+  //   path: 'trashnote',
+  //   component: TrashComponent
+  // },
+  // {
+  //   path: 'archive',
+  //   component: ArchiveComponent
+  // }
 ];
 
 @NgModule({

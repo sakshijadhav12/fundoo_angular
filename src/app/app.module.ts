@@ -28,6 +28,8 @@ import { AddNoteComponent } from './Component/add-note/add-note.component';
 import { FormsModule } from '@angular/forms';
 import { DisplayNotesComponent } from './display-notes/display-notes.component';
 import { GetAllNotesComponent } from './get-all-notes/get-all-notes.component';
+import { ArchiveComponent } from './archive/archive.component';
+import { TrashComponent } from './Component/trash/trash.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { GetAllNotesComponent } from './get-all-notes/get-all-notes.component';
     AddNoteComponent,
     DisplayNotesComponent,
     GetAllNotesComponent,
+    ArchiveComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,

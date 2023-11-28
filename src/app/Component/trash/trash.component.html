@@ -1,0 +1,23 @@
+
+
+<ng-template #card>
+    <div class="card-container">
+      <div class="card" *ngFor="let note of trashednotes.data">
+        <div class="card-header">
+          {{ note.title }}
+        </div>
+        <div class="card-body">
+          {{ note.note}}
+        </div>
+        <div>
+          <app-note-icons></app-note-icons>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  
+  <div *ngIf="!trashednotes || trashednotes.length === 0; else card">
+    <p>No notes available</p>
+    <app-note-icons></app-note-icons>
+  </div>
+  

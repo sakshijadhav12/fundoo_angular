@@ -6,21 +6,19 @@ import { NotesService } from '../services/notes.service';
   templateUrl: './display-notes.component.html',
   styleUrls: ['./display-notes.component.scss']
 })
-export class DisplayNotesComponent  implements OnInit {
-  @Input() notes: any;
-  @Output() noteDetails: EventEmitter<any> = new EventEmitter();
-  @Output() receiveHandleIconsClick = new EventEmitter();
+export class DisplayNotesComponent  {
+  notes:any;
 
-  ngOnInit() {
-    this.noteDetails.emit(this.notes);
-  }
+  constructor(private notedata :NotesService)
+  {
+    this.notedata.getAllNotes().subscribe((data) => {
+     
+      this.notes = data; 
+      console.log(this.notes["data"]);
 
-  receiveHandleIcons(data: any) {
-    console.log('receiveHandleIconsData', data);
-    this.receiveHandleIconsClick.emit(data.noteDetails);
+    });
+    console.log(this.notes);
   }
-  // receiveHandleIcons($event: any) {
-  
 }
 
   

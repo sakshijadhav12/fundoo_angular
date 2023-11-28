@@ -2,7 +2,7 @@
 import { FormGroup, FormBuilder,Validators } from '@angular/forms';
 import { Component } from'@angular/core';
   import { Router } from '@angular/router';
-  import { UserService } from 'src/app/services/User/user.service';
+  import { UserService } from 'src/app/services/notes/user.service';
 @Component({
   selector: 'app-resistration',
   templateUrl: './resistration.component.html',

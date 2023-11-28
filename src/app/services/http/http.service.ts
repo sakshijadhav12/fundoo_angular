@@ -19,15 +19,18 @@ export class HttpService {
 
   constructor(private http: HttpClient) {}
   postService(url: string, reqData: any ) {
-   // console.log(url,reqData,localStorage.getItem('token'));
+   console.log(url,reqData,localStorage.getItem('token'));
     return this.http.post(this.baseUrl + url, reqData,  {
       headers: this.headers,
     });
   }
 
-  getService(url: string , headersOption: any) {
+  getService(url: string ) {
+    console.log(url,localStorage.getItem('token'));
     return this.http.get(this.baseUrl + url, {
-      headers: headersOption,
+      headers:this.headers,
+      
+      
     });
   }
 }

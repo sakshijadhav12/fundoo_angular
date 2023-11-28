@@ -40,8 +40,6 @@
     flex-direction: row;
   }
   
-  
-  
   .note {
     margin-right: auto; 
     color: #202124;
@@ -53,6 +51,7 @@
     display: flex;
     align-items: space-between;
     width:200px;
+    border  :red;
   }
   
 .card {
@@ -104,13 +103,11 @@
     font-family: "Roboto",arial,sans-serif;
     font-size: 15px;
   }
-  .flex-container
-  {
-    display: flex;
-    align-items: space-between;
-  }
+ 
   .mat-card-2 {
     position: absolute;
+    margin-left: 400px;
+    margin-top: 90px;
     box-shadow: 0px 2px 4px rgba(0.8, 0.8, 0.8, 0.8);
     width: 45%;
     height: auto;
@@ -157,7 +154,6 @@
 
 .mat-card-2-left-icon {
 font-size:smaller;
-    // border: 1px solid black;
     width: 55%;
     display: flex;
     justify-content: space-between;

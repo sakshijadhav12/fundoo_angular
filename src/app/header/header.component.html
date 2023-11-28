@@ -36,7 +36,7 @@
       fixedTopGap="56" [opened]="open">
       <mat-nav-list>
         <div>
-          <button mat-icon-button class="example-icon note icon" aria-label="Example icon-note icon">
+          <button mat-icon-button class="example-icon note icon" (click) =" OnNotesClick()"aria-label="Example icon-note icon">
             <img src="../../assets/images/noteIcon.svg" alt="not icon">
           </button>
           <span>Notes</span>
@@ -54,16 +54,16 @@
           <span>Edit</span>
         </div>
         <div>
-          <button mat-icon-button class="example-icon archive " aria-label="Example archive">
+          <button mat-icon-button class="example-icon archive " (click)= " onarchiveclick()" aria-label="Example archive">
             <img src="../../assets/images/archive.svg" alt="not icon">
           </button>
           <span>Archive</span>
         </div>
         <div>
-          <button mat-icon-button class="example-icon trash " aria-label="Example trash">
+          <button mat-icon-button class="example-icon trash " (click)=" ontrashclick()"  aria-label="Example trash">
             <img src="../../assets/images/trash.svg" alt="not icon">
           </button>
-          <span>Bin</span>
+          <span>Trash</span>
         </div>
       </mat-nav-list>
     </mat-sidenav>
@@ -74,4 +74,12 @@
 </mat-sidenav-container> -->
   </p>
 </div>
+<div>
 <app-add-note></app-add-note>
+</div><div>
+  <!-- <div>
+   <app-display-notes></app-display-notes>
+   <app-trash></app-trash>
+   <app-archive></app-archive> -->
+  
+</div>

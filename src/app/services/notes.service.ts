@@ -18,11 +18,18 @@ export class NotesService { options: any;
     return this.httpService.postService('/Notes/add_note', data)
   };
 
-  GetallNotes() {
-    const notes =  this.httpService.getService('/Notes/displyNotes', this.options);
-    return notes;
-  }
+  getAllNotes = () => {
+   
+    return this.httpService. getService('/Notes/displyNotes' );
+  };
+  gettrashNotes= () => {
+    return this.httpService.getService('/Notes/istrashnotes');
+  };
+  getarchiveNotes= () => {
+    return this.httpService.getService('Notes/IsArchiveNotes');
+  };
 
+  
 
 }
 

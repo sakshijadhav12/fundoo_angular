@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -24,8 +25,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   );
 
   private _mobileQueryListener: () => void;
- 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  navValue: string | undefined;
+
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -39,15 +41,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
-  
-  toggleSidenav(): void {
-    console.log("toggle",this.open);
-    this.open = !this.open
-    // if (this.mobileQuery.matches) {
-  //     this.sidenav.toggle();
-  //   }
 
-  //   console.log("val",this.sidenav)
-  // }
-}
+  toggleSidenav(): void {
+    console.log("toggle", this.open);
+    this.open = !this.open
+
+  }
+  OnNotesClick() {
+    this.router.navigate(['display_note'])
+  }
+  ontrashclick() {
+    this.router.navigate(['trashnote'])
+  }
+  onarchiveclick() {
+    console.log("archivenotes");
+    this.router.navigate(['archive'])
+  }
 }
